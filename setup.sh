@@ -200,6 +200,18 @@ else
     fi
 fi
 
+# archive-spec.md
+if [ -f "$HOME/.agent-os/instructions/core/archive-spec.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = false ]; then
+    echo "    ⚠️  ~/.agent-os/instructions/core/archive-spec.md already exists - skipping"
+else
+    curl -s -o "$HOME/.agent-os/instructions/core/archive-spec.md" "${BASE_URL}/instructions/core/archive-spec.md"
+    if [ -f "$HOME/.agent-os/instructions/core/archive-spec.md" ] && [ "$OVERWRITE_INSTRUCTIONS" = true ]; then
+        echo "    ✓ ~/.agent-os/instructions/core/archive-spec.md (overwritten)"
+    else
+        echo "    ✓ ~/.agent-os/instructions/core/archive-spec.md"
+    fi
+fi
+
 # Meta instruction files
 echo ""
 echo "  📂 Meta instructions:"

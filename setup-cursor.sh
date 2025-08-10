@@ -64,7 +64,7 @@ EOF
 }
 
 # Process each command file
-for cmd in plan-product create-spec execute-tasks analyze-product; do
+for cmd in plan-product create-spec execute-tasks analyze-product archive-spec; do
     process_command_file "$cmd"
 done
 
@@ -81,6 +81,7 @@ echo "  @plan-product    - Initiate Agent OS in a new product's codebase"
 echo "  @analyze-product - Initiate Agent OS in an existing product's codebase"
 echo "  @create-spec     - Initiate a new feature (or simply ask 'what's next?')"
 echo "  @execute-tasks    - Build and ship code"
+echo "  @archive-spec     - Archive any spec"
 echo ""
 echo "Learn more at https://buildermethods.com/agent-os"
 echo ""
